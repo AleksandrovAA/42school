@@ -29,14 +29,19 @@ char	*ft_strstr(const char *huge, const char *s2)
 		return ((char *)h);
 	while (h[++i])
 	{
-		while  (h[i++] == s[j++])
-			 k++;
+		while  (h[i] == s[j] && s[j] != '\0')
+		{
+            k++;
+			i++;
+			j++;
+		}
 		if ((int)ft_strlen((const char *)s) == k)
 			return ((char *)&h[i - k]);
-		else
+		else  if (k > 0)
         {
-			k = 0;
             j = 0;
+			i -= k;
+			k = 0;
         }
 	}
 	return (0);

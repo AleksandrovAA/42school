@@ -21,7 +21,7 @@ char	*ft_strcpy(char *st1, const char *st2)
         return (0);
 	s1 = (unsigned char *)st1;
 	s2 = (unsigned char *)st2;
-	while (*s1 != '\0' && *s2)
+	while (*s2 != '\0' && *s2)
 		*s1++ = *s2++;
 	*s1 = '\0';
 	return (st1);

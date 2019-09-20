@@ -13,8 +13,6 @@
 #include <stdlib.h>
 #include "libft.h"
 
-//size_t		ft_strlen(const char *str);
-
 char		*ft_strdup(const char *src)
 {
 	char	*dest;
