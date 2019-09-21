@@ -6,7 +6,7 @@
 /*   By: ngale <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 12:39:10 by ngale             #+#    #+#             */
-/*   Updated: 2019/09/16 20:22:48 by ngale            ###   ########.fr       */
+/*   Updated: 2019/09/20 21:48:35 by ngale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,13 @@ int		main(void)
 	//printf("Strrchr = %s \nMy version = %s\n", d1, d2);
 	printf("Strrchr = %s \n", d1);
 	printf("My version = %s\n", d2);
-    char *src = "thanks to @apellicc for this test !\r\n";
-    char dst1[0x22], dst2[0x22];
-    int size = strlen(src);
-    char *m = memmove(dst1, src, size);
-    char *m2 = ft_memmove(dst2, src, size);
-    printf("Memmove = %s\nMy function = %s", m, m2);
-    
+    /*char *srce = "thanks to @apellicc for this test !\r\n";
+    char dest1[0x22], dest2[0x22];
+    int size = strlen(srce);
+    char *m = memmove(dest1, srce, size);
+    char *m2 = ft_memmove(dest2, srce, size);
+    printf("Memmove = %s\nMy function = %s", m, m2);*/
+	printf("Strnstr = %s\n", strnstr("foivfllf,vf","", 10));
+
 	return (0);
 }

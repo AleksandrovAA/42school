@@ -6,7 +6,7 @@
 /*   By: ngale <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 19:51:13 by ngale             #+#    #+#             */
-/*   Updated: 2019/09/16 19:58:51 by ngale            ###   ########.fr       */
+/*   Updated: 2019/09/20 21:55:58 by ngale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char *s1;
-	unsigned char n;
+	char			*s1;
+	unsigned char	n;
 
 	s1 = (char *)s;
 	n = (unsigned char)c;
