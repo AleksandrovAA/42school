@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngale <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 22:24:26 by ngale             #+#    #+#             */
-/*   Updated: 2019/09/20 22:00:59 by ngale            ###   ########.fr       */
+/*   Created: 2019/09/22 19:35:32 by ngale             #+#    #+#             */
+/*   Updated: 2019/09/22 19:38:24 by ngale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memmove(void *st1, const void *st2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char	*s1;
-	unsigned char	*s2;
-	int				l;
+    int i;
+	char *m;
+	unsigned char *str;
 
-	l = (int)n;
-	s1 = (unsigned char *)st1;
-	s2 = (unsigned char *)st2;
-	if (st1 == st2 || !n)
-		return (st1);
-	if (st1 < st2)
-		while (l--)
-			*s1++ = *s2++;
-	else
-	{
-		l = 0;
-		while (++l <= (int)n)
-			s1[n - l] = s2[n - l];
-	}
-	return (st1);
+    i = -1;
+    if (!f || !s || !(ft_strlen(s) + 1))
+        return (0);
+	str = (unsigned char *)s;
+	if (!(m = ft_memalloc(ft_strlen(s) + 1)))
+		return (0);
+	while (str[++i])
+		m[i] = f(i, str[i]);
+	return (m);
 }

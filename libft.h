@@ -6,7 +6,7 @@
 /*   By: ngale <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 20:12:44 by ngale             #+#    #+#             */
-/*   Updated: 2019/09/21 22:23:09 by ngale            ###   ########.fr       */
+/*   Updated: 2019/09/22 20:45:06 by ngale            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char    *ft_strncat(char *st1, const char *append, size_t n);
 size_t  ft_strlcat(char *st1, const char *append, size_t n);
 char    *ft_strchr(const char *s, int c);
 char    *ft_strrchr(const char *s, int c);
-char	*ft_strstr(const char *s1, const char *s2);
+char	*ft_strstr(const char *h, const char *s);
 char	*ft_strnstr(const char *huge, const char *s2, size_t n);
 int		ft_strcmp(const char *st1, const char *st2);
 int     ft_strncmp(const char *st1, const char *st2, size_t n);
@@ -42,6 +42,15 @@ int     ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void    ft_strdel(char **as);
+void    ft_strclr(char *s);
+void    ft_striter(char *s, void (*f)(char *));
+void    ft_striteri(char *s, void (*f)(unsigned int, char *));
+char    *ft_strmap(char const *s, char (*f)(char));
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 void    ft_putchar(char c);
 void    ft_putstr(char const *s);
