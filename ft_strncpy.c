@@ -21,7 +21,7 @@ char	*ft_strncpy(char *st1, const char *st2, size_t n)
 		return (0);
 	s1 = (unsigned char *)st1;
 	s2 = (unsigned char *)st2;
-	while (*s1 != '\0' && *s2 != '\0' && n)
+	while (s1 && *s2 != '\0' && n)
 	{
 		*s1++ = *s2++;
 		n--;
