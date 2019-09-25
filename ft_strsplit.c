@@ -18,16 +18,15 @@ static int        counter_words(char const *str, char c)
     return (count_w);
 }
 
-/*static void    del(void *as)
+static char    **del(char ***stroka, int i)
 {
-    if (as)
-    {
-        free(as);
-        // *as = NULL;
-    }
-}*/
+    while (i)
+        free((*stroka)[--i]);
+    free(stroka);
+    return (NULL);
+}
 
-static void      split(char **stroka, char *s, char c)
+static char      **split(char **stroka, char *s, char c)
 {
     char prev;
     int i;
@@ -41,12 +40,17 @@ static void      split(char **stroka, char *s, char c)
         if (s[i] != c && (i == 0 || (prev && prev == c)))
             start = i;
         else if (s[i] == c && i != 0 && prev != c)
-            stroka[n++] = ft_strsub(s, start, i - start);
+            if (!(stroka[n++] = ft_strsub(s, start, i - start)))
+                return (del(&stroka, n - 1));
         prev = s[i++];
     }
-    if (prev != c)
-        stroka[n++] = ft_strsub(s, start, i - start);
+    if (prev && prev != c)
+    {
+        if (!(stroka[n++] = ft_strsub(s, start, i - start)))
+            return (del(&stroka, n - 1));
+    }
     stroka[n] = 0;
+    return (stroka);
 }
 
 char	**ft_strsplit(char const *s, char c)

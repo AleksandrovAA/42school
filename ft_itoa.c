@@ -60,7 +60,9 @@ char            *ft_itoa(int n)
         f[len] = ((n % 10) + '0');
         n /= 10;
     }
-    if (f[0] != '-')
+    if (f[0])
+        return (f);
+    else
         f[len] = ((n % 10) + '0');
 	return (f);
 }

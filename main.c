@@ -75,6 +75,12 @@ int		main(void)
     char *m2 = ft_memmove(dest2, srce, size);
     printf("Memmove = %s\nMy function = %s", m, m2);*/
 	printf("Strnstr = %s\n", strnstr("foivfllf,vf","", 10));
-
+    char *i1 = ft_itoa(123);
+    char *i2 = ft_itoa(156);
+    char *i3 = ft_itoa(-0);
+    
+    if (strcmp(i1, "123") || strcmp(i2, "156") || strcmp("0", i3))
+        printf("KO");
+    printf("%s", ft_itoa(123));
 	return (0);
 }
